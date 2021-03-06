@@ -137,6 +137,14 @@ public class Makihyppy {
         public double getPituus(int kierros) {
             return this.kierros[kierros-1].getPituus();
         }
+        
+        
+        /** Paljonko kierroksia yhdessä tuloksessa
+         * @return montako kierrosta määritetty
+         */
+         public static int kierroksia() {
+             return KIERROKSIA;
+         }
     }
 
 
@@ -225,7 +233,12 @@ public class Makihyppy {
          * @return kilpailijan kokonaispisteet
          */
         private double laskeKokonaisPisteet() {
-            return this.laskeKierroksenPisteet(1) + this.laskeKierroksenPisteet(2);
+            double pisteet = 0.0;
+            
+            for (int i = 1; i < (tulos.kierroksia() + 1); i++) {
+                pisteet += laskeKierroksenPisteet(i);
+            }
+            return pisteet;
         }
         
         
@@ -299,7 +312,7 @@ public class Makihyppy {
     toni.tulosta(); 
     matti.tulosta(); 
 
-    if (matti.compareTo(toni) >1) System.out.println("Matti voitti");
+    if (matti.compareTo(toni) >1) System.out.println("Matti voitti !");
 
   } 
 
