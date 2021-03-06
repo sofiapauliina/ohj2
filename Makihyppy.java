@@ -49,7 +49,7 @@ public class Makihyppy {
         
         /** 
          * Tuomaripisteiden getteri, palauttaa koko jonon
-         * @returns tuomaripisteet arrayna
+         * @return tuomaripisteet arrayna
          */
         public double[] getTuomariPisteet() {
             return this.tuomarit;
@@ -58,7 +58,7 @@ public class Makihyppy {
         
         /** 
          * Kierroksella hypätyn pituuden getteri
-         * @returns kierroksella hypätty pituus
+         * @return kierroksella hypätty pituus
          */
         public double getPituus() {
             return pituus;
@@ -67,7 +67,7 @@ public class Makihyppy {
         
         /** 
          * Staattinen metodi 
-         * @returns palauttaa staattisen tuomareiden määrän joka
+         * @return palauttaa staattisen tuomareiden määrän joka
          * määritelty tässä kierrosluokassa
          */
         public static int tuomareita() {
@@ -123,7 +123,7 @@ public class Makihyppy {
         
         /** Tuomaripisteiden getteri
          *  palauttaa koko listan tietyltä kierrokselta
-         *  @returns tuomaripisteet tietyltä kierrokselta arrayna
+         *  @return tuomaripisteet tietyltä kierrokselta arrayna
          */
         public double[] getTuomariPisteet(int kierros) {
             return this.kierros[kierros-1].getTuomariPisteet();
@@ -132,7 +132,7 @@ public class Makihyppy {
         
         /** Tietyllä kierroksella hypätyn pituuden getteri
          *  @param kierros kierros, jolla hypätty pituus halutaan
-         *  @returns kierroksella hypätty pituus
+         *  @return kierroksella hypätty pituus
          */
         public double getPituus(int kierros) {
             return this.kierros[kierros-1].getPituus();
@@ -222,7 +222,7 @@ public class Makihyppy {
         
         /**
          * Laskee kilpailijan kokonaispisteet koko kilpailusta
-         * @returns kilpailijan kokonaispisteet
+         * @return kilpailijan kokonaispisteet
          */
         private double laskeKokonaisPisteet() {
             return this.laskeKierroksenPisteet(1) + this.laskeKierroksenPisteet(2);
@@ -232,7 +232,7 @@ public class Makihyppy {
         /**
          * Antaa kilpailijan pisteet tietyltä kierrokselta
          * @param kierros kierros, jonka pisteet halutaan
-         * @returns kierroksen pisteet
+         * @return kierroksen pisteet
          */
         private double laskeKierroksenPisteet(int kierros) {
         double K_PISTE = 60.0;
@@ -249,7 +249,7 @@ public class Makihyppy {
         /**
          * Palauttaa voittajan kahdesta kilpailijasta: this ja vastustaja
          * @param vastustaja kilpailija, johon verrataan
-         * @returns 2 jos this voitti, -1 jos vastustaja voitti
+         * @return 2 jos this voitti, -1 jos vastustaja voitti
          */
         public int compareTo(Kilpailija vastustaja) {
             double pisteet = this.laskeKokonaisPisteet();
