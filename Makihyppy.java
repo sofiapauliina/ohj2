@@ -145,6 +145,15 @@ public class Makihyppy {
          public static int kierroksia() {
              return KIERROKSIA;
          }
+         
+         
+         /**
+          * Paljonko tuomareita kierroksella?
+          * @return tuomareiden maara kierroksella
+          */ 
+          public static int tuomareita() {
+              return Kierros.tuomareita();
+          }
     }
 
 
@@ -196,30 +205,21 @@ public class Makihyppy {
         /** Tulostaa kilpailijan tiedot */
         public void tulosta() {
             System.out.println("  " + nro + ": " + nimi);
-            System.out.print("Kierros 1    ");
-            System.out.print(tulos.getPituus(1));
-            System.out.print(" m.   Tuomarit:    ");
-            double[] K1 = tulos.getTuomariPisteet(1);
-            for (int i = 0; i < Kierros.tuomareita(); i++) {
-                System.out.print(K1[i] + " ");
+            
+            for (int i = 1; i <= Tulos.kierroksia(); i++) {
+                System.out.print("Kierros " + i + "    ");
+                System.out.print(tulos.getPituus(i));
+                System.out.print(" m.   Tuomarit:    ");
+                double[] pisteet = tulos.getTuomariPisteet(i);
+                for (int j = 0; j < tulos.tuomareita(); j++) {
+                  System.out.print(pisteet[j] + " ");
+                }
+            
+                System.out.print(" = ");
+                System.out.print(this.laskeKierroksenPisteet(i));
+                System.out.print(" pistettä.\n");
             }
-            
-            System.out.print(" = ");
-            System.out.print(this.laskeKierroksenPisteet(1));
-            System.out.print(" pistettä.\n");
-            
-            System.out.print("Kierros 2    ");
-            System.out.print(tulos.getPituus(2));
-            System.out.print(" m.   Tuomarit:    ");
-            double[] K2 = tulos.getTuomariPisteet(2);
-            for (int i = 0; i < Kierros.tuomareita(); i++) {
-                System.out.print(K2[i] + " ");
-            }
-            
-            System.out.print(" = ");
-            System.out.print(this.laskeKierroksenPisteet(2));
-            System.out.print(" pistettä.\n");
-            
+
             System.out.print("Yhteensä ");
             System.out.print(this.laskeKokonaisPisteet());
             System.out.print(" pistettä.\n");
