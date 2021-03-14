@@ -2,7 +2,7 @@ package demo.d9;
 import java.io.*; 
 import java.util.*; 
 
-public class tiedostostaKopiointi{ 
+public class TiedostostaKopiointi{ 
     public static void main(String[] args) {
         String tiedNimi = "alku.txt";
         if (args.length > 0 ) tiedNimi = args[0];
